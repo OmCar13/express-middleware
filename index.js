@@ -32,10 +32,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/check", (req, res) => {
-    if (userIsAuthorized) {
+    if(userIsAuthorized) {
         res.sendFile(__dirname + "/public/secret.html");
     } else {
-        res.sendFile(__dirname + "public/index/html")
+        res.redirect(__dirname + "/public/index.html");
     }
 });
-
